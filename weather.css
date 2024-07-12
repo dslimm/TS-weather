@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("./images/fon.jpg");
+    background-size: cover;
+}
+#btns {
+    display: flex;
+    gap: 12%;
+}
+button {
+    width: 200px;
+    height: 150px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 50%;
+    padding-top: 18%;
+
+}
+.button-play {
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.8);
+}
+#rain {
+    background-image: url("./images/rain1.jpg");
+    background-size: cover;
+}
+#rain:active {
+    opacity: 0.7;
+}
+#bird {
+    background-image: url("./images/bird1.jpg");
+    background-size: cover;
+}
+#bird:active {
+    opacity: 0.7;
+}
+#wave {
+    background-image: url("./images/wave1.jpg");
+    background-size: cover;
+}
+#wave:active {
+    opacity: 0.7;
+}
+input {
+    cursor: pointer;
+    margin-top: 5%;
+}
