@@ -54,5 +54,5 @@ button {
 }
 input {
     cursor: pointer;
-    margin-top: 5%;
+    margin: 5% auto;
 }
