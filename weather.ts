@@ -33,13 +33,13 @@ const createButtons = (): void => {
     buttonsContainer.id = "btns";
     document.body.appendChild(buttonsContainer);
 
-    const musicElement: HTMLAudioElement = document.createElement("audio");
-    musicElement.id = "audio";
-    document.body.appendChild(musicElement);
+    const musicElem: HTMLAudioElement = document.createElement("audio");
+    musicElem.id = "audio";
+    document.body.appendChild(musicElem);
 
-    musicElement.addEventListener("ended", () => {
-        musicElement.currentTime = 0;
-        musicElement.play();
+    musicElem.addEventListener("ended", () => {
+        musicElem.currentTime = 0;
+        musicElem.play();
     });
 
     const buttons = [Rain, Bird, Wave];
@@ -53,18 +53,18 @@ const createButtons = (): void => {
         buttonElem.addEventListener("click", () => {
             document.body.style.backgroundImage = button.background;
             if (
-                isMusicPlaying(musicElement) &&
-                musicElement.src === button.audioElem.src
+                isMusicPlaying(musicElem) &&
+                musicElem.src === button.audioElem.src
             ) {
-                pauseMusic(musicElement, activeButton);
+                pauseMusic(musicElem, activeButton);
             } else {
-                if (isMusicPlaying(musicElement)) {
-                    pauseMusic(musicElement, activeButton);
+                if (isMusicPlaying(musicElem)) {
+                    pauseMusic(musicElem, activeButton);
                 }
-                musicElement.pause();
-                musicElement.currentTime = 0;
-                musicElement.src = button.audioElem.src;
-                musicElement.play();
+                musicElem.pause();
+                musicElem.currentTime = 0;
+                musicElem.src = button.audioElem.src;
+                musicElem.play();
                 buttonElem.classList.add("button-play");
                 activeButton = buttonElem;
             }
@@ -74,22 +74,22 @@ const createButtons = (): void => {
         buttonsContainer.appendChild(buttonElem);
     });
 
-    createInput(Volume, musicElement);
+    createInput(Volume, musicElem);
 };
 
-function isMusicPlaying(musicElement: HTMLAudioElement): boolean {
-    return !musicElement.paused;
+function isMusicPlaying(musicElem: HTMLAudioElement): boolean {
+    return !musicElem.paused;
 }
 
 function pauseMusic(
-    musicElement: HTMLAudioElement,
+    musicElem: HTMLAudioElement,
     elem: HTMLButtonElement
 ): void {
-    musicElement.pause();
+    musicElem.pause();
     if (elem) {
         elem.classList.remove("button-play");
     }
-    musicElement.currentTime = 0;
+    musicElem.currentTime = 0;
 }
 
 // Громкость
@@ -112,7 +112,7 @@ const Volume: Input = {
     value: 50,
 };
 
-const createInput = (input: Input, musicElement: HTMLAudioElement): void => {
+const createInput = (input: Input, musicElem: HTMLAudioElement): void => {
     const inputElem = document.createElement("input");
     inputElem.id = input.id;
     inputElem.type = input.type;
@@ -123,7 +123,7 @@ const createInput = (input: Input, musicElement: HTMLAudioElement): void => {
 
     inputElem.addEventListener("input", () => {
         const volume = Number(inputElem.value) / 100;
-        musicElement.volume = volume;
+        musicElem.volume = volume;
     });
 
     document.body.appendChild(inputElem);
