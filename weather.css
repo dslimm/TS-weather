@@ -71,9 +71,11 @@ input {
         flex-direction: column;
     }
     button {
-        width: 150px;
+        width: 120px;
+        height: 120px;
         margin-top: 50%;
         padding-top: 65%;
+        font-size: 1.2rem;
     }
     input {
         margin: 15% auto;
