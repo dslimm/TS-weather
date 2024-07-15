@@ -67,6 +67,9 @@ input {
     margin: 5% auto;
 }
 @media (max-width: 700px) {
+    body {
+        animation: none;
+    }
     #btns {
         flex-direction: column;
     }
