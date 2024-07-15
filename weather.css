@@ -66,3 +66,16 @@ input {
     cursor: pointer;
     margin: 5% auto;
 }
+@media (max-width: 700px) {
+    #btns {
+        flex-direction: column;
+    }
+    button {
+        width: 150px;
+        margin-top: 50%;
+        padding-top: 65%;
+    }
+    input {
+        margin: 15% auto;
+    }
+}
